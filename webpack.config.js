@@ -1,5 +1,6 @@
 'use strict';
 
+const combineLoaders = require('webpack-combine-loaders');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
     template: __dirname + '/app/index.html',
@@ -17,7 +18,25 @@ module.exports = {
     },
     module : {
         loaders: [
-            {test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"}
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "babel-loader"
+            },
+            {
+              test: /\.css$/,
+              loader: combineLoaders([
+                {
+                  loader: 'style-loader'
+                }, {
+                  loader: 'css-loader',
+                  query: {
+                    modules: true,
+                    localIdentName: '[name]__[local]___[hash:base64:5]'
+                  }
+                }
+              ])
+            }
         ]
     },
     plugins: [HTMLWebpackPluginConfig]

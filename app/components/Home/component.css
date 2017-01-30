@@ -1,0 +1,13 @@
+/*
+    CSS for Home Component, use unique
+    prefix(homeComponent) for each component to avoid
+    overriding of styling
+ */
+
+.homeComponent {
+    background: transparent;
+}
+
+.homeComponent h1 {
+    color: blue;
+}
