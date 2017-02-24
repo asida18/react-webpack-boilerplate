@@ -1,11 +1,10 @@
 import React from 'react';
-import {transparentBg} from '../styles';
 import ReactRouter, {Link} from 'react-router';
 
 // Functional component
 const NewComponent = () => {
     return (
-        <div className="jumbotron col-sm-12 text-center" style={transparentBg}>
+        <div className="jumbotron col-sm-12 text-center transparent">
             <h1>React: New Component!</h1>
             <p className="lead">This is a New component</p>
             <Link to='/'>
