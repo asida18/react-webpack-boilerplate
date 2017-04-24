@@ -6,7 +6,7 @@ import ExampleReducer from './example-reducer.js'
 
 // pass key:value (key name:reducer) into this function
 const rootReducer = combineReducers({
-    books: ExampleReducer
+    state: (state = {}) => state
 });
 
 export default rootReducer;

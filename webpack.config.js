@@ -16,6 +16,9 @@ module.exports = {
         path: __dirname + '/dist',
         filename: "index_bundle.js"
     },
+    devServer: {
+      historyApiFallback: true
+    },
     module : {
         loaders: [
             // Javascript
